@@ -1,0 +1,33 @@
+h1, .h1, h2, .h2, h3, .h3{
+	margin:0 
+}
+ul{
+	margin-bottom: 0
+}
+.videoPlayerOverlay .closeIcon:hover{
+	background: #fff;
+}
+
+.videoPlayerOverlay iframe{
+	-webkit-box-shadow: 0px 2px 20px 10px rgb(0 0 0 / 30%);
+    box-shadow: 0px 2px 20px 10px rgb(0 0 0 / 30%);
+}
+.videoPlayerOverlay{
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.videoPlayerOverlay .closeIcon{
+	padding:0 
+}
+label{
+	font-weight: normal;
+}
+
+.videoPlayerOverlay .closeIcon{
+	-webkit-transition: 500ms;
+	transition: 500ms;
+}
+
+.videoPlayerOverlay .closeIcon:hover  {
+	-webkit-transform: scale(0.95);
+	transform: scale(0.95);
+}

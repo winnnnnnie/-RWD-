@@ -1,0 +1,181 @@
+.QA svg {
+	width: 5vw;
+}
+
+.QA h2 {
+	margin-top: -1%;
+}
+
+#qaContent {
+	text-align: left;
+}
+
+#qaContent .qa_title h3 {
+	font-weight: bold;
+}
+
+#qaContent ul.accordionPart {
+	max-width: 900px;
+	margin: 3% auto 0;
+}
+
+#qaContent ul.accordionPart>li {
+
+	padding: 0 5%;
+	transition: 300ms;
+	position: relative;
+	background-color: #fff;
+	border-radius: 3vw;
+	margin-top: 3%;
+	box-shadow: rgb(0 0 0 / 5%) 0px 0px 20px;
+}
+
+
+
+/*#qaContent ul.accordionPart>li.active{
+	border-radius: 3vw;
+}*/
+
+#qaContent .qa_title {
+	cursor: pointer;
+	padding: 5% 0;
+	transition: 500ms;
+}
+
+#qaContent .qa_title span {
+	position: absolute;
+	right: 0;
+	top: 0;
+	pointer-events: none;
+}
+
+#qaContent .qa_title span img {
+	width: 30px;
+	display: block;
+	opacity: 1;
+	-webkit-transition: 500ms;
+	transition: 500ms;
+}
+
+#qaContent .qa_title.active span img {
+	transform: rotate(45deg);
+	-webkit-transition: 500ms;
+	transition: 500ms;
+}
+
+#qaContent .qa_title h3 {
+	padding: 0 50px 0 40px;
+	position: relative;
+}
+
+#qaContent .qa_title h3:before,
+#qaContent ul.accordionPart>li .qa_content:before {
+	color: #92c426;
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-weight: bold;
+}
+
+#qaContent .qa_title h3:before {
+	content: "Q";
+}
+
+
+
+#qaContent ul.accordionPart>li .qa_content {
+	padding: 0px 40px 45px;
+	position: relative;
+	margin-top: -10px;
+}
+
+#qaContent ul.accordionPart>li .qa_content:before {
+	content: "A";
+	transform: scale(1.3)translateX(15%);
+}
+
+#qaContent ul.accordionPart>li .qa_content p:last-child {
+	margin-bottom: 0;
+}
+
+.qa_content p span {
+	display: inline-block;
+}
+
+.qa_content ol,
+.qa_content ul {
+	margin-bottom: 20px;
+}
+
+.qa_content ol:last-child,
+.qa_content ul:last-child,
+.qa_content ol:only-child,
+.qa_content ul:only-child {
+	margin-bottom: 0px;
+}
+
+#qaContent ul.accordionPart>li .qa_content a {
+	display: unset;
+}
+
+
+
+.service_main #qaContent .further_reading {
+	display: block;
+}
+/*#qaContent ul.accordionPart>li .qa_title.active{
+		color: #92c426;
+	}*/
+@media (min-width: 811px) {
+#qaContent ul.accordionPart>li .qa_content a:hover {
+	opacity: 0.80;
+}
+#qaContent ul.accordionPart>li .qa_title_on {
+	opacity: 1;
+	transition: 500ms;
+	color: #92c426;
+}
+}
+@media (max-width: 810px) {
+	.QA svg {
+		width: 15%;
+	}
+	#qaContent ul.accordionPart {
+		margin: 10% auto 0;
+	}
+	#qaContent ul.accordionPart>li {
+		margin-top: 5%;
+	}
+	#qaContent ul.accordionPart>li .qa_content a:hover {
+	
+}
+}
+
+@media (max-width: 550px) {
+	#qaContent ul.accordionPart>li .qa_title_on {
+		opacity: 1;
+	}
+	#qaContent .qa_title span img {
+		width: 5vw;
+	}
+	#qaContent .qa_title h3 {
+		padding: 0 7vw;
+	}
+	#qaContent ul.accordionPart>li .qa_content {
+		padding: 0px 0vw 3vw 7vw;
+	}
+	#qaContent ul.accordionPart>li .qa_content {
+		margin-top: 0;
+	}
+	#qaContent .qa_title {
+		padding: 5vw 0;
+	}
+
+	.service_main .QA {
+		padding-bottom: 5%!important;
+	}
+	.service_main .QA .main {
+		padding-top: 10%!important;
+		;
+	}
+}

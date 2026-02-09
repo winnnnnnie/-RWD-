@@ -1,0 +1,32 @@
+.videoPlayerOverlay {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.videoPlayerOverlay .closeIcon {
+	top: 15%;
+	right: auto;
+	width: 45px;
+	height: 45px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	background-color:#cdf37b ;
+}
+
+.videoPlayerOverlay .closeIcon img {
+	width: 50%;
+}
+
+.videoPlayerOverlay iframe {
+	width: 95%;
+	max-width: 990px;
+	max-height: 557px;
+}
+
+@media (max-width: 550px) {
+	.videoPlayerOverlay iframe {
+		max-height: 300px;
+	}
+}

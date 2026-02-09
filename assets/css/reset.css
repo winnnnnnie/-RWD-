@@ -1,0 +1,150 @@
+@charset "utf-8";
+/*CSS Information
+File name: reset.css,reset.scss
+Description: Reset統一規格
+Editors: Kevin Huang
+Last Editors: Kevin Huang
+Date: 2012/09/19
+Last Date: 2012/09/20
+Path: reset.css
+*/
+/*將有內距外距的元素歸零，避免不同瀏覽器內外距不同而錯位*/
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+figure,
+figcaption,
+select {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*將標題的字型大小及粗細都重置*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+/*將影像及欄位集的邊框歸零*/
+img,
+fieldset {
+  border: 0;
+}
+/*將清單樣式清除*/
+ol,
+ul {
+  list-style: none;
+}
+/*重置表格註解及標題儲存格的對齊*/
+caption,
+th {
+  text-align: left;
+}
+/*將連結、底線重置*/
+a:link,
+a:visited,
+ins {
+  text-decoration: none;
+}
+/*將連結都設定滑入顯示底線*/
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+/*部份瀏覽器在表單元素的字型樣式跟內文會不一樣，故設為繼承保持一致*/
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+/*將這些瀏覽器可能會有字型外觀樣式的元素重置字型樣式及粗細*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+var,
+optgroup {
+  font-style: normal;
+}
+/*將註解的邊框及大小寫重置*/
+abbr {
+  border: 0;
+  font-variant: normal;
+}
+/*重置上標、下標的樣式*/
+sup,
+sub {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/*將引用重置，避免樣式不同及引號*/
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #999;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #999;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #999;
+}
+/*去除邊線*/
+map *:focus {
+  outline: none !important;
+}
+a,
+button {
+  outline: none !important; 
+  behavior: expression(this.onFocus=this.blur());
+}

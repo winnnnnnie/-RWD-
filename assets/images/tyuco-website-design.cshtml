@@ -1,0 +1,220 @@
+﻿@model BaseModel.IndexViewModel
+@{
+    ViewBag.Title = "桃園國樂團 | 傳旭科技 Digital Communication!";
+    ViewBag.Description = "善用logo延伸設計建立品牌形象X內容SEO佈局 | DC 數位溝通整合行銷";
+    Model.og.title = "桃園國樂團 | 傳旭科技 Digital Communication!";
+    Model.og.description = "善用logo延伸設計建立品牌形象X內容SEO佈局 | DC 數位溝通整合行銷";
+    //ViewBag.Keyword = Function.GetAppSetting("MySetting:WebBaseKeyword");
+    //Model.FrountPageBaseInfo.og.image = Function.GetAppSetting("MySetting:Meta_Og_Image");
+    //Model.FrountPageBaseInfo.og.url = Function.GetAppSetting("MySetting:Meta_Og_Url");
+    //Model.FrountPageBaseInfo.og.type = Function.GetAppSetting("MySetting:Meta_Og_Type");
+    //Model.FrountPageBaseInfo.og.site_name = Function.GetAppSetting("MySetting:Meta_Og_SiteName");
+}
+
+@section head_meta {
+    <meta property="og:title" content="@(Model.og.title)">
+    <meta property="og:description" name="og:description" content="@(Model.og.description)" />
+    <meta property="og:image" content="@(Model.og.image)">
+    <meta property="og:url" content="@(Model.og.url)">
+    <meta property="og:type" content="@(Model.og.type)" />
+    <meta property="og:site_name" content="@(Model.og.site_name)">
+}
+
+@section head {
+    <!--輪播js-->
+    <link href="/assets/lib/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+    <!--css-->
+    <link href="/assets/css/style.css?v2" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/header_no.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/lib/sweetalert/sweetalert.css" />
+}
+
+@section header_crumbs {
+    <div class="crumbs page_detail">
+        <a class="btn_arrow btn_back" href="@Url.Action("Category", "our_work", new { id = "line-official-account-api" })">
+            <img src="/assets/images/1x1.gif" alt="回上頁">
+        </a>
+        <div class="txtM">
+            <a href="@Url.Action("Index", "Home", new { id = "" })">首頁</a> /
+            <a href="@Url.Action("Index", "our_work", new { id = "" })">案例分享</a> /
+            <a href="@Url.Action("Category", "our_work", new { id = "tyuco-website-design" })">桃園國樂團</a>
+        </div>
+    </div>
+}
+
+@section body {
+ <section class="page_detail_kv" style="background-image:url(/assets/images/our-work/tyuco-website-design/kv.jpg);">
+            <div style=" width: 100%;">
+                <p class="c_w">桃園國樂團</p>
+                <h1 class="txt2XL c_w"><b>善用logo延伸設計建立<br>品牌形象X內容SEO佈局</b></h1>
+            </div>
+            <a href="#content" class="arrow_down"><img src="/assets/images/arrow_down_w.svg" alt="往下"></a>
+            <img src="/assets/images/16x9.gif" alt="善用logo延伸設計建立品牌形象X內容SEO佈局">
+        </section>
+        <section class="txt_content_main">
+            <section class="main pt-0" id="content">
+                <!--////////////上稿內容//////////////////////////////-->
+                <div class="txt_content">
+                    <div class="txt_contentTWO fadeInDown" data-emergence="hidden">
+                        <div class="txt_contentTWO_L">
+                            <h3 class="tit_line"><b>專案背景</b></h3>
+                            <h2 class="txt2XL">
+                            <b>展現台灣多元文化<br>奏響國際友誼</b>
+                        </h2>
+                        </div>
+                        <div class="txt_contentTWO_R">
+                            <p>音樂是城市的聲音，傳達城市的風采、韻味與自信，桃園市國樂團於2016年成立，齊聚各大學音樂科系畢業的菁英，扎實的專業訓練，豐沛的演出經驗，充滿活力與熱情，形塑桃園音樂風格，展現台灣多元族群文化底蘊，以文化大使之姿，巡演世界各舞台，傳達國際友誼 亮眼台灣！</p>
+                            <p>桃園市國樂團有豐富的展演安排、樂曲創作和專輯作品，如何系統性的整理資訊架構、優化網站的SEO排名，同時建立鮮明的視覺符號，是這次改版企劃的<span>重點。</span></p>
+                            <div class="hashtag_more">
+                                <div class="txtM">
+                                    <a href="#" class="btn btn_hashtag">#品牌形象官網</a>
+                                    <a href="#" class="btn btn_hashtag">#RWD 響應式網頁設計</a>
+                                    <a href="#" class="btn btn_hashtag">#Responsive Web Design</a>
+                                    <a href="#" class="btn btn_hashtag">#多功能客製化網站</a>
+                                    <a href="#" class="btn btn_hashtag">#客製化系統開發</a>
+                                    <a href="#" class="btn btn_hashtag">#内容管理系統</a>
+                                    <a href="#" class="btn btn_hashtag">#CMS</a>
+                                    <a href="#" class="btn btn_hashtag">#Content Management System</a>
+                                    <a href="#" class="btn btn_hashtag">#SEO</a>
+                                    <a href="#" class="btn btn_hashtag">#Search Engine Optimize</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="/assets/images/our-work/tyuco-website-design/img_1.jpg" alt="桃園國樂團" class="fadeIn" data-emergence="hidden ">
+                    <div class="txt_contentTWO fadeInDown" data-emergence="hidden">
+                        <div class="txt_contentTWO_L">
+                            <h3 class="tit_line"><b>專案改版策略一</b></h3>
+                            <h2 class="txt2XL">
+                            <b>SEO的內容策略</b>
+                        </h2>
+                        </div>
+                        <div class="txt_contentTWO_R">
+                            <ul class="ul_disc">
+                                <li>網站架構增加「內容頁面」比重，如：團員介紹、演出資訊、專輯資訊…等，讓每位團員都有各自的經歷介紹頁面、樂團的經歷也能完整呈現，增加搜尋潛力關鍵字出現的頻次(如：國樂團、國樂、表演、演出、樂譜..等)。</li>
+                                <li>在各內容頁加入社群分享功能，透過使用者自主分享，更可能擴散到具相同興趣的使用者團體中，除了可以增加網站的流量，也有助於吸引新的訪客、同時提升品牌知名度；對於網站排名看似是間接的關係，但長遠累積也會是一個很有幫助的策略做法。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="txt_contentTWO fadeInDown" data-emergence="hidden">
+                        <div class="txt_contentTWO_L">
+                            <h3 class="tit_line"><b>專案改版策略二</b></h3>
+                            <h2 class="txt2XL">
+                            <b>內容管理整合式後台</b>
+                        </h2>
+                        </div>
+                        <div class="txt_contentTWO_R">
+                            <p>當網站要呈現豐富內容，往往需要由行銷/營運人員處理龐大的內容設定，為了降低設定難度，不要讓繁瑣的操作流程讓設定人員眼花撩亂，將後台文章上稿功能整合，透過分類即可進行管理。</p>
+                        </div>
+                    </div>
+                    <img src="/assets/images/our-work/tyuco-website-design/img_2.jpg" alt="內容管理整合式後台" class="fadeIn shadow" data-emergence="hidden " style="max-width: 500px;">
+                    <div class="txt_contentTWO fadeInDown" data-emergence="hidden">
+                        <div class="txt_contentTWO_L">
+                            <h3 class="tit_line"><b>專案改版策略三</b></h3>
+                            <h2 class="txt2XL">
+                            <b>形象塑造與互動驚喜</b>
+                        </h2>
+                        </div>
+                        <div class="txt_contentTWO_R">
+                            <h3 class="c_green "><b>網站設計不只能建立形象，使用者互動更有驚喜</b></h3>
+                            <p>思考如何讓國樂團特色能夠透過網站傳達給使用者，以“音樂”為出發，設計上除了用視覺的“飄舞桃花搭配水墨山水”來營造典雅氛圍，更多了聽覺上的互動巧思—在首頁及樂團介紹頁面，點擊畫面上的樂器圖樣，就會撥放一段悠悠樂音…。讓樂團形象的建立與傳達，不只視覺更有聽覺。</p>
+                            <p>而網站整體色彩，則考量展演活動海報色彩的高豐富度，以白色做為網站主要底色，搭配黑灰無彩色系的文字，白灰黑的色彩搭配包容性高，更能凸顯內容且白底黑字也是網路閱讀最舒適的顯示樣式。</p>
+                        </div>
+                    </div>
+                    <div class="video_style fadeIn shadow" data-emergence="hidden ">
+                        <iframe  src="https://www.youtube.com/embed/YMFGJVllkd4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <img src="/assets/images/16x9.gif" alt="形象塑造與互動驚喜" >
+                    </div>
+                    <img src="/assets/images/our-work/tyuco-website-design/img_3.jpg" alt="形象塑造與互動驚喜" class="fadeIn shadow" data-emergence="hidden ">
+                </div>
+                <!--////////////上稿內容end//////////////////////////////-->
+                <div class="contact-usAN" data-emergence="hidden">
+                    <a class="contact-us " href="../contact-us/index.html">
+                        <svg version="1.1 " id=" " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " x="0px " y="0px " viewBox="0 0 170.1 170.1 " style="enable-background:new 0 0 170.1 170.1; " xml:space="preserve " class="star ">
+                            <g class="st0 ">
+                            </g>
+                            <g>
+                                <g>
+                                    <path class="st1 " d="M85.2,29.2c0,46.1-11.3,57.4-57.4,57.4c46.1,0,57.4,11.3,57.4,57.4c0-46.1,11.3-57.4,57.4-57.4 C96.6,86.6,85.2,75.3,85.2,29.2z " />
+                                </g>
+                            </g>
+                        </svg>
+                        <h2 class="txtL "><b>也想打造專屬網站嗎?</b></h2>
+                        <div class="btn ">歡迎與我們聯絡</div>
+                    </a>
+                </div>
+            </section>
+            <div class="menu_share ">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.dci.tw/our_work/tyuco-website-design" class="btn_img" target="_blank"><img src="/assets/images/btn_fb.svg" alt="fb分享"></a>
+                <a href="https://line.me/R/msg/text/?https://www.dci.tw/our_work/tyuco-website-design" class="btn_img" target="_blank"><img src="/assets/images/btn_line.svg" alt="line分享"></a>
+                <a href="javascript:void(0);" data-url="https://www.dci.tw/our_work/tyuco-website-design" data-trigger="copy" class="btn_img"><img src="/assets/images/btn_copy.svg" alt="複製連結"></a>
+                <a href="https://tyuco.taoyuancf.org.tw/" target="_blank" class="btn_img"><img src="/assets/images/btn_link.svg" alt="外部連結"></a>
+            </div>
+        </section>
+        <!--/////////////////////////////////////////////-->
+
+    
+   <section class="main pt-0">
+            <div class="list_otherBOX">
+                <div class="list_otherTXT">
+                    <h3><b>也許你也感興趣的案例</b></h3>
+                    <figure></figure><a class="txtM" href="/our_work">View All</a>
+                </div>
+                <div class="swiper-container list_other btn_swiper_arrowBOX">
+                    <div class="swiper-wrapper ">
+                        <div class="swiper-slide list_item ">
+                            <a href="/our-work/slimming-line-api" class="">
+                                <figure style="background-image:url(/assets/images/our-work/slimming-line-api/list.jpg);">
+                                    <img src="/assets/images/850x635.gif" alt="全臺據點統一Line線上預約，顧客方便 管理更方便！">
+                                </figure>
+                                <figcaption>
+                                    <p><b>全臺據點統一Line線上預約<br>顧客方便 管理更方便！</b></p>
+                                </figcaption>
+                            </a>
+                        </div>
+                        <div class="swiper-slide list_item ">
+                            <a href="/our-work/nu-house-website-customize" class="">
+                                <figure style="background-image:url(/assets/images/our-work/nu-house-website-customize/list.jpg);">
+                                    <img src="/assets/images/850x635.gif" alt="建案質感大圖載入流暢，線上填單專人服務O2O零阻礙">
+                                </figure>
+                                <figcaption>
+                                    <p><b>建案質感大圖載入流暢<br>線上填單專人服務O2O零阻礙</b></p>
+                                </figcaption>
+                            </a>
+                        </div>
+                        <div class="swiper-slide list_item ">
+                            <a href="/our-work/ctbc-financialpark-website-customize" class="">
+                                <figure style="background-image:url(/assets/images/our-work/ctbc-financialpark-website-customize/list.jpg);">
+                                    <img src="/assets/images/850x635.gif" alt="全臺據點統一Line線上預約，顧客方便 管理更方便！">
+                                </figure>
+                                <figcaption>
+                                    <p><b>RWD友善手機瀏覽情境<br>實體場館活動1指快速報名</b></p>
+                                </figcaption>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next btn_swiper_arrow btn_arrow btn_arrow_gyL">
+                        <img src="/assets/images/1x1.gif">
+                    </div>
+                    <div class="swiper-button-prev btn_swiper_arrow btn_arrow btn_arrow_gyR">
+                        <img src="/assets/images/1x1.gif">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+}
+
+@section model {
+}
+
+@section footer {
+    <!--輪播js-->
+    <script src="/assets/lib/swiper/swiper-bundle.min.js"></script>
+    <!--頁面-->
+    <script src="/assets/js/detail.js"></script>
+
+    <script src="/assets/lib/sweetalert/sweetalert.min.js"></script>
+   
+}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/*logo隱藏聯絡我們*/
+.menu:not(.active2),.menu:not(.active) {
+  mix-blend-mode: color-dodge;
+  
+}
+.menu:not(.active2){
+  color: #fff;
+}
+.menu:not(.active2) span{
+  background: #fff;
+}
+.logo,
+.connection,
+.page_bg {
+  display: none!important;
+}
+
+.menu {
+  mix-blend-mode: color-dodge;
+}
+
+@media (min-width: 851px) {
+  .Copyright {
+    display: none!important;
+  }
+}
