@@ -1,0 +1,47 @@
+@charset "utf-8";
+.p-service-intro{
+    background: var(--primary-color);
+    
+}
+.p-service-intro .l-container{
+width: var(--container-lg-width);
+}
+/* 下半部網格系統 */
+.p-service-grid {
+  display: grid;
+ 
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-section-m); /* 使用你之前的響應式間距變數 */
+  margin-top: var(--sp-group);
+  width: var(--container-lg-width);
+}
+.p-service-inner{
+  
+}
+.p-service-item__img {
+  width: 100%;
+  aspect-ratio: 180 / 250; /* 根據截圖比例設定 */
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.p-service-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 手機版斷點處理 */
+@media (max-width: 768px) {
+  .p-service-intro__flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .p-service-grid {
+    /* MB 版：1排2個 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}

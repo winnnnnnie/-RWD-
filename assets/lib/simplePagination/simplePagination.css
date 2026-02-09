@@ -1,0 +1,214 @@
+/**
+* CSS themes for simplePagination.js
+* Author: Flavius Matis - http://flaviusmatis.github.com/
+* URL: https://github.com/flaviusmatis/simplePagination.js
+*/
+
+ul.simple-pagination {
+	list-style: none;
+}
+
+.simple-pagination {
+	display: block;
+	margin: 0;
+	width:100%;
+	text-align:center;
+}
+
+.simple-pagination ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display:inline-block
+}
+
+.simple-pagination li {
+	list-style: none;
+	padding: 0;
+	margin: 5px;
+	float: left;
+}
+span.ellipse.clickable {
+	cursor: pointer;
+}
+
+.ellipse input {
+	width:150%;
+	z-index:2;
+	position:relative;
+	left:-25%;
+	top:-2px;
+	border: 1px solid #fff;
+	-webkit-box-shadow: #999 0px 0px 10px;
+          box-shadow: #999 0px 0px 10px;
+}
+
+/*------------------------------------*\
+	Compact Theme Styles
+\*------------------------------------*/
+.compact-theme span {
+	cursor:pointer;
+}
+
+.compact-theme a, .compact-theme span {
+	float: left;
+	line-height:48px;
+	font-weight: normal;
+	text-align: center;
+	border-left: none;
+	width: 50px;
+	text-align:center;
+	height:50px;
+}
+
+.compact-theme a:hover {
+	filter: alpha(opacity=100);
+	opacity:1;
+	-webkit-transform : scale(1);
+	color:#9b4aa7 ;
+}
+@media (max-width: 1920px) {
+.compact-theme a, .compact-theme span {line-height:36px;width: 40px;height:40px;}
+}
+@media (max-width: 1366px) {
+.compact-theme a, .compact-theme span {line-height:35px;width: 35px;height:35px;}
+}
+@media (max-width: 375px) {
+.compact-theme a, .compact-theme span{width: 36px;}
+}
+@media (max-width: 320px) {
+.compact-theme a, .compact-theme span{width: 29px;}
+}
+.compact-theme a:hover, .compact-theme li:not(.disabled):not(.active) span:hover {
+	text-decoration: none;
+
+}
+
+.compact-theme .active span{color:#9b4aa7; font-weight: bold;}
+.compact-theme .current {
+	
+	cursor: default;
+}
+.compact-theme .next,.compact-theme .prev{
+	border-radius: 500px;
+	background-color:#e4e4e6;
+	font-size: 0;
+	background-repeat  : no-repeat;
+	background-position: center center;
+	background-size: 40%;
+}
+.compact-theme .next{
+	background-image: url(arrow_gr_L.svg);
+}
+.compact-theme .prev{
+	background-image: url(arrow_gr_R.svg);
+}
+.compact-theme .next:hover,.compact-theme .prev:hover{
+	background-color:#ceced3;
+}
+.compact-theme .disabled span{ pointer-events: none;opacity:0.5;
+}
+.compact-theme .ellipse {
+	padding: 0px;
+	cursor: default;
+}
+
+/*------------------------------------*\
+	Light Theme Styles
+\*------------------------------------*/
+.light-theme span {
+	cursor:pointer;
+}
+
+.light-theme a, .light-theme span {
+	float: left;
+	color: #666;
+	line-height:24px;
+	font-weight: normal;
+	text-align: center;
+	border: 1px solid #BBB;
+	min-width: 14px;
+	padding: 0 7px;
+	margin: 0 5px 0 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */
+	background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
+}
+
+.light-theme a:hover, .light-theme li:not(.disabled):not(.active) span:hover {
+	text-decoration: none;
+	background: #FCFCFC;
+}
+
+.light-theme .current {
+	background: #666;
+	color: #FFF;
+	border-color: #444;
+	box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset;
+	cursor: default;
+}
+
+.light-theme .ellipse {
+	background: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	font-weight: bold;
+	cursor: default;
+}
+
+/*------------------------------------*\
+	Dark Theme Styles
+\*------------------------------------*/
+.dark-theme span {
+	cursor:pointer;
+}
+
+.dark-theme a, .dark-theme span {
+	float: left;
+	color: #CCC;
+	line-height:24px;
+	font-weight: normal;
+	text-align: center;
+	border: 1px solid #222;
+	min-width: 14px;
+	padding: 0 7px;
+	margin: 0 5px 0 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	background: #555; /* Old browsers */
+	background: -moz-linear-gradient(top, #555 0%, #333 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555), color-stop(100%,#333)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #555 0%,#333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #555 0%,#333 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #555 0%,#333 100%); /* IE10+ */
+	background: linear-gradient(top, #555 0%,#333 100%); /* W3C */
+}
+
+.dark-theme a:hover, .dark-theme li:not(.disabled):not(.active) span:hover {
+	text-decoration: none;
+	background: #444;
+}
+
+.dark-theme .current {
+	background: #222;
+	color: #FFF;
+	border-color: #000;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.2), 0 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+	cursor: default;
+}
+
+.dark-theme .ellipse {
+	background: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	font-weight: bold;
+	cursor: default;
+}

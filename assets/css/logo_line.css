@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+
+
+.logo.active {
+	mix-blend-mode: darken;
+}
+
+
+.menu:not(.active2) span {
+    background-color: #fff;
+}
+.Copyright:not(.active), .menu:not(.active2) {
+    color: #fff;
+}
+
+@media (min-width: 851px) {
+
+	.logo a {
+		background-image: url(../images/logo_w.svg);
+	}
+	.logo.active a {
+		background-image: url(../images/logo.svg);
+	}
+}
+
+
+
+@media (max-width: 850px) {
+	.logo a {
+		opacity: 0
+	}
+	.logo:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url(../images/logo_w.svg);
+		background-size: auto 100%;
+		transition: 500ms;
+		background-repeat: no-repeat;
+		background-position: top left;
+	}
+	.logo.active:before {
+		opacity: 0
+	}
+
+	.logo.active a {
+		opacity: 1
+	}
+	
+}
+

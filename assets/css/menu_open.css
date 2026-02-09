@@ -1,0 +1,731 @@
+@charset "utf-8";
+.c-main-nav__item span {
+  display: block;
+}
+.c-mega-menu__inner .swiper-pagination span{
+  display: inline-block;
+}
+.c-main-nav__item.has-mega {
+  position: static;
+}
+/* 下拉選單本體 */
+.c-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-height: 900px;
+  background: #fff;
+  box-shadow: var(--shadow-main);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 9999999;
+}
+/* 啟用狀態 */
+.c-mega-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  z-index: 999;
+}
+.c-tag-list {
+  font-family: var(--font-secondary);
+}
+.c-tag-list__item--lang {
+  border-left: 1px solid #ccc;
+  margin-left: 15px;
+  padding: 0 3%;
+}
+
+/* 讓選單開啟時，導覽列文字變色 */
+.c-main-nav__item.has-mega.is-active > a {
+  color: var(--primary-color);
+
+  opacity: 1;
+}
+/*.c-main-nav__item.has-mega.is-active .c-btn-down__icon {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}*/
+
+.c-btn-down__icon {
+  display: inline-block;
+}
+
+.c-main-nav:has(.is-active) .c-main-nav__item:not(.is-active) a {
+  color: #666;
+}
+/*.c-main-nav:has(.is-active) .c-main-nav__item:not(.is-active) a:hover {
+    color: #a67c66;
+} */
+
+/* 確保圖片容器能夠正常旋轉 */
+.c-btn-down__icon {
+  display: inline-block;
+  margin:0 4%;
+  vertical-align: middle;
+}
+
+.c-mega-menu__inner {
+  display: flex;
+  width: var(--container-lg-width);
+  margin: 0 auto;
+  gap: 60px;
+}
+.c-mega-menu__visual {
+  width: 300px;
+  flex-shrink: 0;
+}
+.c-mega-menu__visual img {
+  width: 100%;
+  border-radius: 20px;
+}
+.c-mega-menu__content {
+  flex: 1;
+  background: var(--main-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: 500ms;
+}
+/* 改善狀況標籤區 */
+.c-mega-menu__header {
+  margin-bottom: 40px;
+}
+.c-mega-menu__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 2.5%;
+}
+.c-tag {
+  padding: 8px 2.5%;
+  border: 1px solid #ffffff;
+  background: #f3eee9;
+  color: var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
+}
+.c-tag.is-active {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+/* 四欄連結清單 */
+.c-mega-menu__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 2.5%;
+}
+.c-mega-menu__col {
+  width: 100%;
+}
+.c-mega-menu__list {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 30px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.c-mega-menu__list li {
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--primary-color2);
+  display: flex !important;
+  align-items: center; /* 關鍵：讓符號與右側文字區域垂直置中 */
+  list-style: none;
+  text-align: left;
+}
+.c-mega-menu__list li:not(:last-child) {
+}
+.c-mega-menu__list li::before {
+  content: "-";
+  font-family: var(--font-secondary);
+  flex: 0 0 20px;
+  color: #a67c66;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-mega-menu__list a {
+flex: 1;
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 100%;
+
+  color: #333;
+  text-decoration: none;
+
+  line-height: 1.5;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  white-space: normal;
+}
+.c-mega-menu__list a:hover {
+  color: #a67c66;
+}
+/* 第一層：部位切換按鈕列 */
+.c-mega-menu__category {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin: 30px auto;
+}
+.c-mega-menu__category span {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s;
+  position: relative;
+  padding: 5px 10px;
+}
+.c-cat-btn {
+  background: none;
+  border: none;
+
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+.c-cat-btn.is-active {
+  color: var(--primary-color);
+}
+/* 面板隱藏邏輯 */
+.c-mega-menu__panel {
+  display: none;
+}
+.c-mega-menu__panel.is-active {
+  display: block; /* 只有加上 is-active 的顯示 */
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.c-mega-menu {
+  /* 防止選單還在動畫關閉時，滑鼠誤觸到內容 */
+  pointer-events: none;
+}
+.c-mega-menu.is-active {
+  pointer-events: auto;
+}
+/* 隱藏未選中的標籤內容 */
+.c-mega-menu__tag-content {
+  display: none;
+  width: 100%;
+  height: 300px;
+     overflow-x: hidden;
+    overflow-y: scroll;
+  transition: 500ms;
+}
+.c-mega-menu__tag-content.is-active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.c-hamburger {
+  display: none;
+}
+.l-mobile-sidebar {
+  display: none;
+}
+/* mb */
+
+/* 預設隱藏在右側 */
+
+/* 箭頭旋轉 */
+.js-mobile-drop i {
+  transition: transform 0.3s;
+}
+.has-child.is-active > .js-mobile-drop i {
+  transform: rotate(180deg);
+}
+/* Tab 按鈕容器 */
+.c-mobile-tabs {
+  display: flex;
+  flex-wrap: wrap; /* 關鍵：允許內容換行 */
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 2.5% 5%;
+  gap: 20px;
+}
+
+.c-mobile-tabs__btn {
+  flex: 0 0 calc((100% - (2 * 20px)) / 3);
+  display: flex;
+
+  box-sizing: border-box; /* 確保 padding 不會撐破寬度 */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #fff;
+  background-color: #f3eee9;
+  color: var(--primary-color);
+  border-radius: var(--u-rounded-full);
+  padding: 10px; /* 增加點擊空間 */
+}
+
+.c-mobile-tabs__btn.is-active {
+  background: var(--primary-color);
+  color: #fff;
+  /* font-weight: bold; */
+}
+@media (max-width: 850px) {
+  .c-tag-list-mb__item--lang a {
+    font-family: var(--font-secondary);
+    display: flex;
+  }
+  .c-tag-list-mb__item--lang span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-right: 1.5%;
+    margin-bottom: 6%;
+    width: 2.5vw;
+  }
+  .c-tag-list-mb__item--lang span img {
+    display: block;
+  }
+  .c-mobile-tabs {
+    gap: 3vw;
+
+    margin: 0 auto;
+    width: 96%;
+  }
+  .c-mobile-tabs__btn {
+    padding: 2% 3%;
+    flex: 0 0 calc((100% - (2 * 6%)) / 3);
+  }
+  .c-mobile-nav__item .count-tag_s {
+    width: 6vw !important;
+  }
+
+  .l-header__main {
+    display: none;
+  }
+
+  .c-mega-menu__visual {
+    display: none;
+  }
+  .c-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+  /* 當側邊欄開啟時顯示遮罩 */
+  .l-mobile-sidebar.is-open ~ .c-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 額外小技巧：如果你的 HTML 結構不同，也可以直接用 JS 切換 class */
+  .c-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* 1. 側邊欄本體容器 */
+  .js-mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    height: 100vh;
+
+    background: #fff;
+    border-radius: 40px 0 0 40px;
+    z-index: 9999 !important;
+    padding: 60px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+
+    overflow-y: auto;
+    display: block;
+    transition: right 0.4s ease-in-out; /* 使用 right 做動畫 */
+  }
+
+  /* 2. 遮罩層 (Overlay) */
+
+  /* 3. 內部標籤清單 (調整為橫向滑動避免斷行) */
+  .c-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    gap: 8px;
+    padding: 4%;
+    list-style: none; /* 移除預設清單圓點 */
+  }
+  .c-tag-list::-webkit-scrollbar {
+    display: none; /* 隱藏捲軸 */
+  }
+  .c-tag-list__item {
+    flex: 0 0 auto;
+  }
+  /* 4. 選單列表 (確保垂直排列) */
+  .c-main-nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .c-main-nav__item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  /* 5. Mega Menu 手機版處理 (通常改為點擊展開) */
+  .c-mega-menu {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 10px 0 !important;
+    display: none;
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  /* 讓內部的 container 不要限制寬度 */
+  .c-mega-menu .l-container {
+    width: 100% !important;
+    padding: 0 15px !important;
+    max-width: 100%;
+  }
+  /* 隱藏手機版不需要的視覺圖片 */
+  .c-mega-menu__visual {
+    display: none !important;
+  }
+  /* 讓內部的分類按鈕垂直排列（手風琴感） */
+  .c-mega-menu__category {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+  }
+  /* 2. 確保側欄可以捲動，因為選單展開會變很長 */
+  .l-header__main.js-mobile-sidebar {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* 漢堡選單 */
+  .c-hamburger {
+    display: flex; /* 改成 flex 方便內部三條線置中 */
+    align-items: center;
+    justify-content: center;
+    align-self: stretch; /* 強制撐滿父層高度 */
+    padding: 4%;
+    flex: 0 0 9vw; /* 固定寬度 */
+    height: auto; /* 讓高度由 flex stretch 決定 */
+
+    background: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+  .c-hamburger__box {
+    display: block;
+    width: 50px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+  }
+  .c-hamburger__line,
+  .c-hamburger__line::before,
+  .c-hamburger__line::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff; /* 你的品牌色 */
+    border-radius: 4px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  .c-hamburger__line {
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+  }
+  /* 上下兩條線 */
+  .c-hamburger__line::before,
+  .c-hamburger__line::after {
+    content: "";
+    left: 0;
+  }
+  .c-hamburger__line::before {
+    top: -8px;
+  }
+  .c-hamburger__line::after {
+    top: 8px;
+  }
+
+  .c-hamburger.is-active .c-hamburger__line {
+    background-color: transparent;
+  }
+  .c-hamburger.is-active .c-hamburger__line::before {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .c-hamburger.is-active .c-hamburger__line::after {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .c-hamburger.is-active {
+    background: transparent;
+    left: 0;
+    /* margin: 0 auto 0 0; */
+    transition: transform 0.3s ease;
+  }
+
+  .c-hamburger.is-active .c-hamburger__line::before,
+  .c-hamburger.is-active .c-hamburger__line::after {
+    background-color: var(--primary-color);
+  }
+
+  .l-header__tags {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .has-mega.is-active > a .c-btn-down__icon {
+    transform: rotate(180deg);
+  }
+  .c-mega-menu__list {
+    grid-template-columns: 1fr; /* 強制單欄 */
+    gap: 0;
+  }
+  .c-mega-menu__tag-content {
+    height: auto;
+  }
+  /* 1. 讓原本左右分欄的容器變成垂直排列 */
+  .c-mega-menu__inner {
+    display: block !important;
+    width: auto;
+  }
+  /* 2. 大類按鈕清單 */
+  .c-mega-menu__category {
+    display: flex;
+    flex-direction: column; /* 強制垂直 */
+    width: 100% !important;
+  }
+  /* 3. 面板 (原本 PC 是隱藏切換，MB 改為手風琴內容) */
+  .c-mega-menu__panel {
+    display: none; /* 預設隱藏，由 JS slideDown 控制 */
+    width: 100% !important;
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    padding: 20px;
+  }
+  /* 修正：在 MB 版移除原本 PC 的切換動畫，改用 JS 控制 */
+  .c-mega-menu__panel.is-active {
+    display: block;
+  }
+  /* 4. 針對標籤 (c-tag) 的排版 */
+  .c-mega-menu__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  /* 只針對第一層導航的箭頭 */
+  .has-mega.is-active.c-btn-down__icon {
+    transform: rotate(180deg);
+  }
+  /* 如果大類按鈕也有箭頭，獨立寫 */
+  .c-cat-btn.is-active .c-btn-down__icon {
+    transform: rotate(180deg);
+  }
+
+  /* 修正圖示變動：只針對當前層級 */
+  .has-mega.is-open > a .c-btn-down__icon {
+    transform: rotate(180deg);
+  }
+  /* 如果大類按鈕也有箭頭，單獨控制 */
+  .c-cat-btn.is-active .c-btn-down__icon {
+    transform: rotate(180deg);
+  }
+
+  .l-mobile-sidebar.is-open {
+    right: 0;
+    padding: 6% 10%;
+  }
+  /* 下拉選單動畫 */
+  .js-mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    /* display: block;  */
+
+    transition: max-height 0.3s ease-out;
+  }
+  /* 箭頭旋轉動畫 */
+  .js-mobile-drop.is-active .btn_arrow_down img {
+    transform: rotate(180deg);
+  }
+  .btn_arrow_down img {
+    transition: transform 0.3s ease;
+  }
+  .c-mobile-nav .c-mobile-nav__item {
+    border-bottom: 1px solid #eee;
+    padding: 4% 0;
+    line-height: 100%;
+  }
+  .c-mobile-nav__sublabel {
+    padding: 2.5% 0 2.5% 5%;
+    line-height: 100%;
+    background: #f5f5f5;
+    color: #666;
+  }
+  .c-mobile-nav__sublabel span {
+    display: inline-block;
+  }
+  .c-mobile-nav .c-mobile-nav__item a {
+    display: block;
+    color: var(--black-color);
+    line-height: normal;
+  }
+  .c-mobile-nav__subitem {
+    margin-bottom: 2px;
+  }
+
+  .c-mobile-nav__subitem.has-child .c-mobile-nav__grandchild {
+    background: var(--main-bg);
+
+    height: 60vh;
+    overflow-y: auto;
+
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+  /* 當父層啟動時，展開至固定高度 */
+  .c-mobile-nav__subitem.is-active > .c-mobile-nav__grandchild {
+    max-height: 60vh;
+  }
+
+  .c-mobile-nav__grandchild::-webkit-scrollbar {
+    width: 4px;
+  }
+  .c-mobile-nav__grandchild::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+  }
+
+  .c-mobile-tab-pane {
+    height: auto;
+  }
+
+  /* 2. 可選：設定點擊後的標籤顏色或箭頭旋轉 */
+  .has-child.is-active > .js-mobile-drop {
+    margin-bottom: 4%;
+  }
+
+  .has-child.is-active > .js-mobile-drop .btn_arrow_down {
+    transform: rotate(180deg); /* 箭頭旋轉 */
+  }
+
+  .btn_arrow_down {
+    transition: transform 0.3s ease;
+  }
+  /* Tab 內容面板控制 */
+  .c-mobile-tab-panel {
+    display: none;
+    margin: 0 5% 5%;
+  }
+
+  .c-mobile-tab-panel.is-active {
+    display: block; /* 激活時顯示 */
+  }
+
+  .c-mobile-tab-panel li {
+    list-style: none;
+    padding: 4% 0;
+    display: flex;
+  }
+  .c-mobile-tab-panel li::before {
+    content: "-";
+    font-family: var(--font-secondary);
+    flex: 0 0 5%;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c-mobile-tab-panel li:not(:last-child) {
+    border-bottom: 1px solid var(--primary-color);
+  }
+}
+@media (max-width: 1024px) {
+  .c-hamburger {
+    flex: 0 0 14vw;
+  }
+}
+@media (max-width: 768px) {
+  .c-mobile-tabs {
+    gap: 2vw;
+    margin: 0 auto 10%;
+    width: 96%;
+  }
+  .js-mobile-sidebar {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .c-tag-list-mb__item--lang span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-right: 2%;
+    margin-bottom: 6%;
+    width: 5vw;
+  }
+  .c-mobile-nav__sublabel {
+    padding: 4% 3%;
+  }
+  .c-hamburger__box {
+    width: 100%;
+  }
+
+  .c-mobile-nav__item .count-tag_s {
+    width: 18% !important;
+  }
+}
+@media (max-width: 550px) {
+  .c-hamburger {
+    flex: 0 0 19vw;
+    padding: 0 4%;
+  }
+}
